@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Karina Petrenko - Website Development 2 Labs</title>
+</head>
+
+<body>
+    <h1>Karina Petrenko - Website Development 2 Labs</h1>
+
+    <hr>
+
+    
+    <h2> Week One - HTML Intro</h2>
+    <ul>
+         <li>
+            <a href="week01/lab01/words.html" target="_blank">Lab One Exercise One</a>
+        </li> 
+        <li>
+            <a href="week01/lab01/variables.html" target="_blank">Lab One Exercise Two</a>
+        </li>
+        <li>
+            <a href="week01/lab01/prompt.html" target="_blank">Lab One Exercise Three</a>
+        </li>
+        <li>
+            <a href="week01/lab01/mycalculator.html" target="_blank">Lab One Exercise Four </a>
+        </li>
+         <li>
+            <a href="week01/lab02/switch.html" target="_blank">Lab Two Exercise One</a>
+        </li>
+        <li>
+            <a href="week01/lab02/loop.html" target="_blank">Lab Two Exercise Two</a>
+        </li>
+       
+    </ul>
+</body>
+
+</html>
