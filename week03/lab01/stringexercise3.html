@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>String Exercise 3</title>
+	<style>
+	  body {
+	     width:400px;
+		 margin:0 auto;
+	  }
+	  
+	  p {
+	     border: solid black 1px;
+		 height: 20px;
+	  }
+	</style>
+</head>
+
+<body>
+<h1>String Exercise Three</h1>
+<p id = "result"></p>
+<button>String Exercise 3</button>
+
+<script>
+const btn = document.querySelector('button');
+  
+btn.addEventListener('click', (evt) => {
+  let date = "2026-02-04";
+ let newDate = date.split("-");
+console.log(newDate);
+document.querySelector("#result").textContent= `${newDate[2]}-${newDate[1]}-${newDate[0]}`
+});
+</script>
+
+</body>
+</html>
