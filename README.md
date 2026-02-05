@@ -1,1 +1,1 @@
-Karina NePetrenko
+Karina Petrenko
