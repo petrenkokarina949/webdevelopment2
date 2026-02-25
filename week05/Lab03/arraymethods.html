@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+<title>Array Methods</title>
+</head>
+<body>
+<h1>Array Methods</h1>
+<p id = "list1"></p>
+<p id = "list2"></p>
+<p id = "list3"></p>
+<p id = "list4"></p>
+<script>
+const numbers = [12, 5, 8, 130, 44, 2, 19];
+document.querySelector('#list1').textContent =  `Array elements: ${numbers.join(", ")}`;
+
+
+const checkNums = (num)=> num > 10;
+const pos = numbers.filter(checkNums);
+document.querySelector('#list2').textContent =  `Numbers>10: ${pos.join(", ")}`;
+
+const multiplyByTwo = (num1) => num1 * 2;
+const copy = numbers.map(multiplyByTwo);
+document.querySelector('#list3').textContent =  `Arrey values doubled: ${copy.join(", ")}`;
+
+const fruitBasket = ['banana', 'pear', 'guava']
+
+numbers.sort((a,b) => a-b);
+document.querySelector('#list4').textContent =  `Sorted Array: ${numbers.join(", ")}`;
+
+
+
+
+</script>
+</body>
+</html>
+
+
