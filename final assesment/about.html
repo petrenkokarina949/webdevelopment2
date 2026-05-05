@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest World | About</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">Quest World</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="quests.html">Quests</a>
+            <a href="about.html" class="active">About</a>
+        </nav>
+    </header>
+
+    <section class="section">
+        <h2>About Quest World</h2>
+
+        <div class="info-cards">
+            <article class="info-card">
+                <span class="info-icon">👩‍💻</span>
+                <h3>Project Designer</h3>
+                <p><strong>Karina Petrenko</strong></p>
+                <p>First-year Software Systems Development student at SETU Waterford.</p>
+            </article>
+
+            <article class="info-card">
+                <span class="info-icon">🧩</span>
+                <h3>Website Topic</h3>
+                <p>Quest World is a student website about escape rooms, puzzles and themed adventures.</p>
+                <p>It helps users browse quests by genre, difficulty, rating and price.</p>
+            </article>
+
+            <article class="info-card">
+                <span class="info-icon">📊</span>
+                <h3>About the Dataset</h3>
+                <p>The custom dataset stores escape room quest objects.</p>
+                <p>Each object includes name, genre, difficulty, players, price, rating and image.</p>
+            </article>
+
+            <article class="info-card">
+                <span class="info-icon">⚙️</span>
+                <h3>JavaScript Features</h3>
+                <p>The Quests page uses Handlebars to render cards dynamically.</p>
+                <p>Users can add, delete, search, filter and sort quests, with data saved in localStorage.</p>
+            </article>
+        </div>
+
+        <div class="gallery">
+            <a href="https://cdn-ijlhd.nitrocdn.com/pIEKyAkqVIwQbkZVvQnGLjHnoSzBpJLx/assets/images/optimized/rev-c4c7d58/escaperoommystery.com/wp-content/uploads/2018/05/ERM-008.jpg" data-lightbox="quests" data-title="Mystery room">
+                <img src="https://cdn-ijlhd.nitrocdn.com/pIEKyAkqVIwQbkZVvQnGLjHnoSzBpJLx/assets/images/optimized/rev-c4c7d58/escaperoommystery.com/wp-content/uploads/2018/05/ERM-008.jpg" alt="Mystery room">
+            </a>
+            <a href="https://about.fb.com/wp-content/uploads/2022/10/Immerse-Yourself-in-Halloween-Horror-on-Meta-Quest_Header.jpg?fit=1920%2C1080" data-lightbox="quests" data-title="Team puzzle">
+                <img src="https://about.fb.com/wp-content/uploads/2022/10/Immerse-Yourself-in-Halloween-Horror-on-Meta-Quest_Header.jpg?fit=1920%2C1080" alt="Team puzzle">
+            </a>
+            <a href="https://thumbs.dreamstime.com/b/magical-anime-forest-background-ancient-trees-glowing-fireflies-enchanted-soft-mist-atmosphere-fantasy-adventure-vibes-366160154.jpg" data-lightbox="quests" data-title="Adventure atmosphere">
+                <img src="https://thumbs.dreamstime.com/b/magical-anime-forest-background-ancient-trees-glowing-fireflies-enchanted-soft-mist-atmosphere-fantasy-adventure-vibes-366160154.jpg" alt="Adventure atmosphere">
+            </a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3 class="faq-title">What is an escape room?</h3>
+            <p class="faq-answer hidden">It is a game where players solve puzzles in a themed room before time runs out.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 class="faq-title">How many people can play a quest?</h3>
+            <p class="faq-answer hidden">Most quests are made for small teams, usually from 2 to 6 players.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 class="faq-title">Are quests scary?</h3>
+            <p class="faq-answer hidden">Not all quests are scary. Some are mystery or adventure based and focus more on puzzles.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 class="faq-title">How long does a quest usually last?</h3>
+            <p class="faq-answer hidden">A standard quest often lasts around 60 minutes, but some can be shorter or longer.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 class="faq-title">Why are quests popular?</h3>
+            <p class="faq-answer hidden">People enjoy them because they mix teamwork, logic, story and challenge in one activity.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Comments</h2>
+        <form id="commentForm" class="comment-form">
+            <div>
+                <label for="commentName">Name</label>
+                <input type="text" id="commentName" required>
+            </div>
+            <div>
+                <label for="commentMessage">Comment</label>
+                <textarea id="commentMessage" required></textarea>
+            </div>
+            <div>
+                <button type="submit">Add Comment</button>
+            </div>
+        </form>
+
+        <div id="commentList"></div>
+    </section>
+
+    <footer>
+        <p>Quest World student project</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+    <script id="comment-template" type="text/x-handlebars-template">
+        <div class="comment-list">
+            {{#each comments}}
+            <div class="comment">
+                <h3>{{name}}</h3>
+                <small>{{date}}</small>
+                <p>{{message}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </script>
+
+    <script src="script.js"></script>
+
+<script>
+document.addEventListener("click", function(e){
+    if(e.target.classList.contains("lb-container") || e.target.classList.contains("lb-outerContainer")){
+        document.querySelector(".lb-close")?.click();
+    }
+});
+</script>
+</body>
+</html>

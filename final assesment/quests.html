@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest World | Quests</title>
+    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">Quest World</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="quests.html" class="active">Quests</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <section class="section">
+        <h2>Quest Catalogue</h2>
+
+        <div class="controls">
+            <div>
+                <label for="searchInput">Search by name</label>
+                <input type="text" id="searchInput" placeholder="e.g. Haunted House">
+            </div>
+
+            <div>
+                <label for="genreFilter">Filter by genre</label>
+                <select id="genreFilter">
+                    <option value="all">All genres</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Adventure">Adventure</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="difficultyFilter">Filter by difficulty</label>
+                <select id="difficultyFilter">
+                    <option value="all">All levels</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="maxPriceFilter">Max price</label>
+                <select id="maxPriceFilter">
+                    <option value="all">No limit</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="35">35</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="sortSelect">Sort by</label>
+                <select id="sortSelect">
+                    <option value="name-asc">Name A-Z</option>
+                    <option value="name-desc">Name Z-A</option>
+                    <option value="price-asc">Price low-high</option>
+                    <option value="price-desc">Price high-low</option>
+                    <option value="rating-desc">Rating high-low</option>
+                    <option value="players-asc">Players low-high</option>
+                </select>
+            </div>
+
+            <div>
+                <button id="resetBtn" type="button">Reset filters</button>
+            </div>
+        </div>
+
+        <button id="openModalBtn" type="button">Add New Quest</button>
+
+        <div class="stats">
+            <div class="stat-box">
+                <h3 id="questCount">0</h3>
+                <p>Visible quests</p>
+            </div>
+            <div class="stat-box">
+                <h3 id="averagePrice">0</h3>
+                <p>Average price</p>
+            </div>
+            <div class="stat-box">
+                <h3 id="topRatedQuest">-</h3>
+                <p>Top rated quest</p>
+            </div>
+        </div>
+
+        <div id="questList"></div>
+    </section>
+
+    <div class="modal" id="questModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Quest</h2>
+                <button id="closeModalBtn" class="close-btn" type="button">Close</button>
+            </div>
+
+            <form id="questForm" class="form-grid">
+                <div>
+                    <label for="name">Quest name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div>
+                    <label for="genre">Genre</label>
+                    <select id="genre" required>
+                        <option value="Horror">Horror</option>
+                        <option value="Mystery">Mystery</option>
+                        <option value="Adventure">Adventure</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="difficulty">Difficulty</label>
+                    <select id="difficulty" required>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="players">Players</label>
+                    <input type="number" id="players" min="2" max="8" required>
+                </div>
+                <div>
+                    <label for="price">Price</label>
+                    <input type="number" id="price" min="1" required>
+                </div>
+                <div>
+                    <label for="rating">Rating</label>
+                    <input type="number" id="rating" min="1" max="5" step="0.1" required>
+                </div>
+                <div style="grid-column: 1 / -1;">
+                    <label for="image">Image URL</label>
+                    <input type="text" id="image" required>
+                </div>
+                <div style="grid-column: 1 / -1;">
+                    <button type="submit">Save Quest</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Quest World student project</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+    <script id="quest-template" type="text/x-handlebars-template">
+        <div class="cards">
+            {{#each quests}}
+            <div class="card">
+                <img src="{{image}}" alt="{{name}}" class="card-image">
+                <div class="card-content">
+                    <h3>{{name}}</h3>
+                    <p><strong>Genre:</strong> {{genre}}</p>
+                    <p><strong>Difficulty:</strong> {{difficulty}}</p>
+                    <p><strong>Players:</strong> {{players}}</p>
+                    <p><strong>Price:</strong> €{{price}}</p>
+                    <p><strong>Rating:</strong> {{rating}}</p>
+                    <div class="card-actions">
+                        <button class="delete-btn" data-id="{{id}}">Delete</button>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
